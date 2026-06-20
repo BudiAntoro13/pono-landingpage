@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pono｜自分を好きになるための、最後のダイエット</title>
+<meta name="description" content="Ponoは体重を落とす場所ではなく、自分を大切にできるようになる場所。身体と心を整える伴走型サロン。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ivory: #FBF7EF;
+  --blush: #F2E2DC;
+  --rose: #B56B6F;
+  --rose-soft: #DBA8AC;
+  --gold: #C9A24B;
+  --gold-deep: #9C7A2F;
+  --gold-soft: #E8D090;
+  --ink: #3A2E24;
+  --line: rgba(201, 162, 75, 0.38);
+  --radius: 26px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Shippori Mincho', serif;
+  background: var(--ivory);
+  color: var(--ink);
+  line-height: 2;
+  font-size: 15.5px;
+  letter-spacing: 0.02em;
+  padding-bottom: 78px;
+}
+h1, h2, h3, .serif { font-family: 'Shippori Mincho', serif; font-weight: 600; letter-spacing: 0.06em; }
+img { max-width: 100%; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+section { padding: 90px 0; position: relative; }
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  margin-bottom: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.eyebrow::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-top: 9px;
+}
+h2 { font-size: clamp(24px, 4.4vw, 34px); line-height: 1.8; margin-bottom: 28px; font-weight: 500; }
+h2 em {
+  font-style: normal;
+  background: linear-gradient(110deg, var(--rose) 20%, var(--gold) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+p.lead { font-size: 16px; max-width: 660px; color: rgba(58, 46, 36, 0.82); }
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 18px 48px;
+  border-radius: 999px;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(110deg, #C96F7B 0%, #D4944A 40%, #C9A24B 70%, #E8D090 100%);
+  background-size: 220% 100%;
+  animation: goldflow 7s ease infinite;
+  box-shadow: 0 12px 30px rgba(201, 107, 123, 0.35);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -80%;
+  width: 50%; height: 100%;
+  background: linear-gradient(110deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: skewX(-20deg);
+  animation: sheen 5s ease infinite;
+}
+.btn:hover { box-shadow: 0 16px 38px rgba(201, 162, 75, 0.5); transform: translateY(-3px); }
+.btn small { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; opacity: 0.92; color: #fff; }
+@keyframes goldflow { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+@keyframes sheen { 0%{left:-80%} 45%,100%{left:130%} }
+
+.bg-photo {
+  position: fixed; inset: 0; z-index: -2;
+  background-image: url('bg-photo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.bg-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(248,248,248,0.792) 0%, rgba(205,168,168,0.721) 50%, rgba(251,249,249,0.847) 100%);
+}
+.stars { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.star {
+  position: absolute; border-radius: 50%; background: #fff;
+  box-shadow: 0 0 6px 2px rgba(255,244,214,0.95), 0 0 14px 5px rgba(232,207,154,0.6);
+  animation: twinkle var(--d,4s) ease-in-out var(--dl,0s) infinite, floatup var(--f,26s) linear var(--dl,0s) infinite;
+  opacity: 0;
+}
+@keyframes twinkle { 0%,100%{opacity:0;transform:scale(0.4)} 50%{opacity:var(--o,0.9);transform:scale(1)} }
+@keyframes floatup { from{margin-top:0} to{margin-top:-90px} }
+@media(prefers-reduced-motion:reduce) {
+  .star,.btn,.btn::after{animation:none}
+  .reveal{opacity:1!important;transform:none!important}
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden; background: transparent;
+}
+.hero .wrap { position: relative; z-index: 2; padding-top: 70px; padding-bottom: 20px; text-align: center; }
+.hero-tag { font-size: 11px; letter-spacing: 0.5em; color: var(--gold-soft); font-weight: 700; margin-bottom: 28px; text-transform: uppercase; }
+.hero h1 { font-size: clamp(29px, 5.8vw, 50px); line-height: 1.95; margin-bottom: 28px; font-weight: 500; color: #1a1a1a; }
+.hero h1 .accent {
+  background: linear-gradient(110deg, #2a2a2a 10%, #4a4a4a 60%, #3a3a3a 95%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero p { max-width: 580px; margin: 0 auto 20px; font-size: 15.5px; color: rgba(26,26,26,0.85); }
+
+.petal { position: absolute; border-radius: 60% 40% 55% 45%/55% 60% 40% 45%; opacity: 0.35; filter: blur(2px); animation: drift 15s ease-in-out infinite; }
+.petal.p1 { width: 170px; height: 170px; background: var(--rose-soft); top: -30px; right: 9%; }
+.petal.p2 { width: 110px; height: 110px; background: var(--gold-soft); bottom: 13%; left: 8%; animation-delay: -6s; }
+.petal.p3 { width: 64px; height: 64px; background: var(--rose); top: 34%; right: 5%; opacity: 0.2; animation-delay: -10s; }
+@keyframes drift { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-26px) rotate(9deg)} }
+
+.bg-light { background: rgba(251,247,239,0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.45); }
+.bg-light-gold { background: radial-gradient(820px 400px at 88% -8%, rgba(232,208,144,0.2), transparent 60%), rgba(255,252,244,0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 0 0 1px rgba(232,208,144,0.4); }
+.bg-light-rose { background: radial-gradient(circle at 10% 16%, rgba(219,168,172,0.15) 0 90px, transparent 102px), radial-gradient(circle at 90% 78%, rgba(232,208,144,0.18) 0 116px, transparent 128px), rgba(252,248,240,0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 0 0 1px rgba(219,168,172,0.35); }
+.bg-dark { background: radial-gradient(820px 420px at 72% 0%, rgba(201,162,75,0.15), transparent 60%), rgba(40,28,18,0.75); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 0 0 1px rgba(201,162,75,0.25); color: var(--ivory); }
+
+section + section { border-top: 1px solid rgba(201,162,75,0.15); }
+.bg-light h2,.bg-light-gold h2,.bg-light-rose h2 { color: var(--ink); }
+.bg-light p,.bg-light-gold p,.bg-light-rose p { color: rgba(58,46,36,0.88); }
+.bg-light .eyebrow,.bg-light-gold .eyebrow,.bg-light-rose .eyebrow { color: var(--gold-deep); }
+.bg-light h3,.bg-light-gold h3,.bg-light-rose h3 { color: var(--ink); }
+.bg-dark h2 { color: var(--ivory); }
+.bg-dark p { color: rgba(251,247,239,0.88); }
+.bg-dark .eyebrow { color: var(--gold-soft); }
+.bg-dark h3 { color: var(--ivory); }
+.bg-dark .lead { color: rgba(251,247,239,0.85); }
+
+.checks { display: grid; gap: 12px; margin: 36px 0; list-style: none; }
+.checks li {
+  padding: 18px 24px 18px 58px;
+  position: relative; font-weight: 500; font-size: 15px; border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: linear-gradient(135deg, rgba(251,247,239,0.30), rgba(219,168,172,0.22), rgba(251,247,239,0.30));
+  background-size: 300% 300%;
+  animation: glassloop 6s ease infinite;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  color: var(--ink);
+}
+@keyframes glassloop { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+.checks li::before { content: "✿"; position: absolute; left: 24px; color: var(--rose); font-size: 17px; }
+.bg-dark .checks li { color: var(--ivory); border-color: rgba(255,255,255,0.2); }
+
+.philosophy-section {
+  position: relative; padding: 100px 0;
+  background-image: url('gold.jpg');
+  background-size: cover; background-position: center;
+  background-attachment: fixed; text-align: center;
+}
+.philosophy-section::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(20,12,6,0.82) 0%, rgba(40,24,10,0.78) 50%, rgba(20,12,6,0.88) 100%);
+}
+.philosophy-section .wrap { position: relative; z-index: 2; }
+.phil-eyebrow { font-size: 11px; letter-spacing: 0.5em; color: var(--gold-soft); font-weight: 700; margin-bottom: 28px; text-transform: uppercase; display: block; }
+.phil-eyebrow::after { content: ""; display: block; width: 44px; height: 1px; background: linear-gradient(90deg, var(--gold-soft), transparent); margin: 9px auto 0; }
+.phil-h2 { font-size: clamp(24px, 4.4vw, 38px); line-height: 1.9; margin-bottom: 28px; font-weight: 500; color: #fff; letter-spacing: 0.08em; }
+.phil-gradient {
+  background: linear-gradient(110deg, var(--rose-soft) 10%, var(--gold-soft) 60%, var(--gold) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.phil-text { font-size: 15.5px; color: rgba(255,255,255,0.82); max-width: 620px; margin: 0 auto; line-height: 2.2; letter-spacing: 0.04em; }
+
+.pain .closing { font-family: 'Shippori Mincho', serif; font-size: 19px; text-align: center; margin-top: 36px; letter-spacing: 0.08em; color: var(--ink); }
+
+.mistake-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 32px; }
+.mcard { background: rgba(255,255,255,0.78); border-radius: var(--radius); padding: 32px 26px; border: 1px solid rgba(201,162,75,0.2); border-top: 4px solid var(--gold); box-shadow: 0 10px 26px rgba(201,138,100,0.1); }
+.mcard h3 { font-size: 16px; margin-bottom: 10px; color: var(--rose); letter-spacing: 0.04em; }
+.mcard p { font-size: 13.5px; color: rgba(58,46,36,0.78); }
+
+.truth { margin-top: 46px; border-radius: var(--radius); padding: 48px 34px; text-align: center; background: linear-gradient(135deg, rgba(90,58,40,0.92), rgba(58,40,24,0.95)); border: 1px solid var(--line); box-shadow: 0 20px 44px rgba(58,40,24,0.25); }
+.truth p { font-family: 'Shippori Mincho', serif; font-size: clamp(18px,3vw,22px); line-height: 2.2; color: var(--ivory); }
+.truth em { font-style: normal; color: var(--gold-soft); }
+
+.mirror { max-width: 430px; margin: 46px auto 0; background: rgba(255,252,244,0.82); border: 1.5px solid var(--gold); border-radius: 210px 210px 26px 26px; padding: 60px 32px 48px; text-align: center; box-shadow: 0 0 0 10px rgba(232,208,144,0.2), 0 24px 50px rgba(180,138,80,0.18); }
+.mirror p { font-family: 'Shippori Mincho', serif; font-size: 18px; line-height: 2.3; color: var(--ink); }
+.mirror .sig { margin-top: 20px; font-size: 11px; letter-spacing: 0.45em; color: var(--gold); }
+
+.step { display: flex; gap: 26px; align-items: flex-start; padding: 32px 0; }
+.step + .step { border-top: 1px dashed rgba(201,162,75,0.3); }
+.stepnum { flex: 0 0 64px; height: 64px; border-radius: 50%; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Shippori Mincho', serif; font-size: 23px; background: linear-gradient(140deg, var(--rose-soft), var(--gold)); box-shadow: 0 10px 22px rgba(201,138,80,0.3); }
+.step h3 { font-size: 19px; margin-bottom: 9px; letter-spacing: 0.05em; color: var(--ink); }
+.bg-dark .step h3 { color: var(--ivory); }
+.step .star { display: inline-block; position: relative; overflow: hidden; color: #fff; font-size: 11px; font-weight: 700; border-radius: 999px; padding: 4px 16px; margin-left: 10px; vertical-align: middle; letter-spacing: 0.1em; background: linear-gradient(110deg, var(--rose) 0%, var(--gold-deep) 40%, var(--gold) 70%, var(--gold-soft) 100%); background-size: 250% 100%; animation: slideglow 3s ease-in-out infinite; box-shadow: 0 0 10px rgba(201,138,80,0.45); }
+@keyframes slideglow { 0%,100%{background-position:0% 50%;box-shadow:0 0 8px rgba(201,162,75,0.4)} 50%{background-position:100% 50%;box-shadow:0 0 20px rgba(240,220,140,0.8)} }
+.step p { color: rgba(58,46,36,0.82); font-size: 14.5px; }
+.bg-dark .step p { color: rgba(251,247,239,0.82); }
+
+.future ul { margin-top: 28px; display: grid; gap: 14px; list-style: none; }
+.future li { background: rgba(255,255,255,0.72); border-radius: 18px; padding: 22px 26px; font-weight: 500; font-family: 'Shippori Mincho', serif; font-size: 16px; letter-spacing: 0.04em; color: var(--ink); border: 1px solid rgba(201,162,75,0.22); border-left: 4px solid var(--gold); box-shadow: 0 8px 22px rgba(201,138,80,0.1); }
+.future li::before { content: "❀ "; color: var(--gold); font-size: 13px; margin-right: 8px; }
+
+.fitgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 34px; }
+.fit { padding: 34px 28px; border-radius: var(--radius); }
+.fit.yes { border: 1.5px solid var(--gold); background: rgba(255,252,240,0.85); box-shadow: 0 12px 30px rgba(201,162,75,0.15); }
+.fit.no { background: rgba(255,255,255,0.55); border: 1px solid rgba(58,46,36,0.12); }
+.fit h3 { font-size: 17px; margin-bottom: 18px; text-align: center; letter-spacing: 0.08em; color: var(--ink); }
+.fit.yes h3 { color: var(--rose); }
+.fit ul { list-style: none; display: grid; gap: 11px; font-size: 14px; color: rgba(58,46,36,0.88); }
+.fit.yes li::before { content: "❀ "; color: var(--gold); font-size: 12px; }
+.fit.no li::before { content: "— "; color: rgba(58,46,36,0.4); }
+
+.ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 38px; }
+.ba-card { background: rgba(255,252,244,0.88); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(201,162,75,0.28); box-shadow: 0 16px 38px rgba(180,138,80,0.18); transition: transform 0.3s, box-shadow 0.3s; }
+.ba-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(180,138,80,0.25); }
+.ba-imgs { display: grid; grid-template-columns: 1fr; gap: 0; background: transparent; width: 100%; overflow: hidden; }
+.ba-imgs figure { position: relative; margin: 0; padding: 0; background: transparent; display: block; width: 100%; height: auto; }
+.ba-imgs figure img { width: 100%; height: auto; display: block; object-fit: contain; object-position: center; }
+.ba-imgs figcaption { display: none; }
+.ba-body { padding: 22px 24px; }
+.ba-timeline { font-size: 12px; color: var(--gold); font-weight: 700; margin-bottom: 8px; letter-spacing: 0.08em; }
+.ba-body h3 { font-size: 15px; margin-bottom: 4px; color: var(--rose); letter-spacing: 0.05em; }
+.ba-transformation { font-size: 12px; background: rgba(232,208,144,0.15); padding: 10px 12px; border-radius: 8px; margin-bottom: 10px; border-left: 3px solid var(--gold); color: rgba(58,46,36,0.8); }
+.ba-transformation strong { color: var(--rose); font-weight: 700; }
+.ba-body p { font-size: 13px; color: rgba(58,46,36,0.82); line-height: 1.7; }
+.ba-note { font-size: 11px; color: rgba(58,46,36,0.5); margin-top: 12px; text-align: center; }
+
+.voice-carousel { margin-top: 48px; position: relative; }
+.carousel-container { position: relative; overflow: hidden; border-radius: var(--radius); background: rgba(255,252,244,0.88); }
+.carousel-wrapper { display: flex; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); position: relative; }
+.carousel-slide { min-width: 100%; padding: 40px 32px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: rgba(255,252,244,0.95); }
+.voice-card-inner { display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; max-width: 620px; }
+.voice-avatar { width: 90px; height: 90px; border-radius: 50%; overflow: hidden; border: 3px solid var(--gold-soft); box-shadow: 0 6px 20px rgba(201,162,75,0.25); flex-shrink: 0; background: linear-gradient(135deg, var(--blush), var(--gold-soft)); display: flex; align-items: center; justify-content: center; font-size: 32px; }
+.voice-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.voice-quote { background: rgba(255,252,244,0.95); border-radius: 20px; padding: 28px 32px; position: relative; border: 1px solid rgba(201,162,75,0.2); box-shadow: 0 8px 24px rgba(201,138,80,0.1); width: 100%; }
+.voice-quote::before { content: "❝"; position: absolute; top: -14px; left: 24px; font-size: 36px; color: var(--gold-soft); line-height: 1; }
+.voice-customer { font-family: 'Shippori Mincho', serif; font-size: 16px; font-weight: 600; color: var(--rose); margin-bottom: 8px; }
+.voice-text { font-size: 14px; color: rgba(58,46,36,0.85); max-width: 560px; line-height: 1.9; font-style: italic; margin-bottom: 12px; }
+.voice-meta { font-size: 12px; color: rgba(255, 115, 0, 0.6); }
+.voice-stars { color: rgb(207, 171, 29)!important; }
+
+.carousel-controls { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 24px; }
+.carousel-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--rose); border: none; color: white; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+.carousel-btn:hover { background: var(--gold); transform: scale(1.1); }
+.carousel-dots { display: flex; gap: 8px; }
+.carousel-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(201,162,75,0.4); cursor: pointer; transition: all 0.3s; border: 2px solid transparent; }
+.carousel-dot.active { background: var(--gold); width: 28px; border-radius: 5px; }
+
+.sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px; z-index: 50; background: rgba(251,247,239,0.94); backdrop-filter: blur(10px); border-top: 1px solid rgba(201,162,75,0.3); transform: translateY(0); transition: transform 0.3s ease; opacity: 1; display: block; }
+.sticky-cta.hidden { transform: translateY(120%); opacity: 0; }
+.sticky-cta .btn { display: block; text-align: center; padding: 15px; width: 100%; margin: 0; }
+
+.profile { display: grid; grid-template-columns: 285px 1fr; gap: 42px; align-items: start; margin-top: 38px; }
+.pf-photo { width: 265px; height: 315px; border-radius: 148px 148px 26px 26px; overflow: hidden; background: linear-gradient(165deg, #F0E4D4, #E4D0B8); display: flex; align-items: center; justify-content: center; color: #B89870; font-size: 12px; letter-spacing: 0.12em; border: 1.5px solid var(--gold); box-shadow: 0 0 0 10px rgba(232,208,144,0.2), 0 22px 48px rgba(180,138,80,0.22); }
+.pf-photo img { width: 100%; height: 100%; object-fit: cover; }
+.pf-name { font-family: 'Shippori Mincho', serif; font-size: 22px; margin-bottom: 5px; letter-spacing: 0.1em; color: var(--ink); }
+.pf-role { font-size: 11px; letter-spacing: 0.35em; color: var(--gold-deep); margin-bottom: 20px; font-weight: 700; text-transform: uppercase; }
+.pf-body p { font-size: 14.5px; margin-bottom: 15px; color: rgba(58,46,36,0.85); }
+
+.message { color: var(--ivory); }
+.message .eyebrow { color: var(--gold-soft); }
+.message h2 { color: var(--ivory); }
+.message p { max-width: 640px; margin-bottom: 20px; color: rgba(251,247,239,0.88); }
+.message .name { font-family: 'Shippori Mincho', serif; text-align: right; max-width: 640px; letter-spacing: 0.25em; margin-top: 32px; color: var(--gold-soft); }
+
+.faq-section { margin-top: 60px; }
+.faq-items { display: grid; gap: 16px; margin-top: 28px; }
+.faq-item { background: rgba(255,252,244,0.88); border-radius: var(--radius); border: 1px solid rgba(201,162,75,0.28); overflow: hidden; }
+.faq-question { padding: 22px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 15px; color: var(--ink); transition: all 0.3s; background: rgba(255,252,244,0.88); }
+.faq-question:hover { background: rgba(232,208,144,0.15); }
+.faq-toggle { font-size: 20px; color: var(--rose); transition: transform 0.3s; }
+.faq-item.active .faq-toggle { transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 24px; color: rgba(58,46,36,0.82); font-size: 14px; line-height: 1.8; }
+.faq-item.active .faq-answer { max-height: 500px; padding: 0 24px 22px 24px; }
+
+.final { text-align: center; }
+.final h2 { margin-bottom: 14px; }
+.final p { margin-bottom: 38px; }
+.note { font-size: 11px; margin-top: 20px; color: rgba(58,46,36,0.45); }
+
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.85s ease, transform 0.85s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+footer { padding: 34px 0; text-align: center; font-size: 11.5px; color: rgba(58,46,36,0.5); letter-spacing: 0.16em; background: rgba(251,247,239,0.88); backdrop-filter: blur(4px); border-top: 1px solid rgba(201,162,75,0.22); }
+
+/* ===== TREATMENT MENU - HORIZONTAL LAYOUT ===== */
+.menu-card-horizontal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: rgba(255, 252, 244, 0.92);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(201, 162, 75, 0.28);
+  box-shadow: 0 16px 38px rgba(180, 138, 80, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 38px;
+}
+
+.menu-card-horizontal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(180, 138, 80, 0.25);
+}
+
+.menu-card-horizontal .menu-img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-card-horizontal .menu-img-placeholder {
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  background: linear-gradient(135deg, rgba(219, 168, 172, 0.3), rgba(232, 208, 144, 0.3));
+}
+
+.menu-card-horizontal .menu-body {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-card-horizontal .menu-tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  color: #fff;
+  background: linear-gradient(110deg, var(--rose), var(--gold));
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.menu-card-horizontal h3 {
+  font-size: 26px;
+  margin-bottom: 14px;
+  color: var(--ink);
+  letter-spacing: 0.06em;
+}
+
+.menu-card-horizontal p {
+  font-size: 14px;
+  color: rgba(58, 46, 36, 0.80);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.menu-card-horizontal .menu-points {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.menu-card-horizontal .menu-points li {
+  font-size: 13.5px;
+  color: rgba(58, 46, 36, 0.82);
+  padding-left: 22px;
+  position: relative;
+}
+
+.menu-card-horizontal .menu-points li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 10px;
+  top: 5px;
+}
+
+mark.highlight-rose {
+  background: linear-gradient(transparent 55%, rgba(181, 107, 111, 0.25) 55%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0 2px;
+  border-radius: 2px;
+  color: inherit;
+}
+
+mark.highlight-winback {
+  background: linear-gradient(transparent 55%, rgba(201, 162, 75, 0.3) 55%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0 2px;
+  border-radius: 2px;
+  color: inherit;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .menu-card-horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card-horizontal .menu-img,
+  .menu-card-horizontal .menu-img-placeholder {
+    min-height: 220px;
+  }
+
+  .menu-card-horizontal .menu-body {
+    padding: 28px 24px;
+  }
+
+  .menu-card-horizontal h3 {
+    font-size: 22px;
+  }
+}
+
+/* ===== SALON GALLERY ===== */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 38px; }
+.gallery-item { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 1/1; background: linear-gradient(135deg, rgba(219,168,172,0.25), rgba(232,208,144,0.25)); box-shadow: 0 8px 24px rgba(180,138,80,0.15); transition: transform 0.3s, box-shadow 0.3s; }
+.gallery-item:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(180,138,80,0.25); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-item-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: rgba(58,46,36,0.45); font-size: 11px; letter-spacing: 0.1em; }
+.gallery-item-placeholder span { font-size: 28px; }
+.gallery-item:first-child { grid-column: span 2; aspect-ratio: 2/1; }
+
+@media (max-width: 640px) {
+  .fitgrid { grid-template-columns: 1fr; }
+  .ba-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gallery-item:first-child { grid-column: span 1; aspect-ratio: 1/1; }
+}
+
+@media (max-width: 700px) {
+  .profile { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 20px; line-height: 1.9; margin-bottom: 20px; }
+  .hero p { font-size: 13.5px; line-height: 1.8; margin-bottom: 24px !important; }
+  .hero-tag { font-size: 10px; letter-spacing: 0.3em; }
+  .hero .wrap { padding-top: 50px; padding-bottom: 50px; }
+  .philosophy-section { padding: 70px 0; background-attachment: scroll; }
+  .phil-h2 { font-size: 22px; line-height: 1.8; }
+  .phil-text { font-size: 14px; line-height: 2; }
+  .btn { font-size: 13px; padding: 14px 32px; }
+  .btn small { font-size: 9px; }
+  section { padding: 60px 0; }
+  h2 { margin-bottom: 18px; font-size: clamp(20px, 4vw, 28px); line-height: 1.8; }
+  p.lead { font-size: 14px; line-height: 1.7; }
+  .ba-card { box-shadow: 0 8px 20px rgba(180,138,80,0.12); }
+  .ba-body { padding: 16px 18px; }
+  .ba-body h3 { font-size: 14px; margin-bottom: 3px; }
+  .ba-transformation { font-size: 11px; padding: 8px 10px; margin-bottom: 8px; }
+  .ba-body p { font-size: 12px; line-height: 1.7; }
+  .carousel-slide { padding: 24px 16px; }
+  .voice-avatar { width: 70px; height: 70px; font-size: 26px; }
+  .voice-quote { padding: 18px 20px; }
+  .voice-customer { font-size: 14px; margin-bottom: 4px; }
+  .voice-text { font-size: 12px; line-height: 1.7; margin-bottom: 8px; }
+  .faq-question { padding: 16px 18px; font-size: 14px; }
+  .faq-answer { font-size: 13px; line-height: 1.7; }
+  .checks li { font-size: 14px; padding: 14px 20px 14px 48px; line-height: 1.6; }
+  .step { gap: 16px; padding: 20px 0; }
+  .stepnum { flex: 0 0 52px; height: 52px; font-size: 20px; }
+  .step h3 { font-size: 16px; margin-bottom: 6px; }
+  .step p { font-size: 13px; line-height: 1.6; }
+  .mistake-cards { gap: 14px; }
+  .mcard { padding: 20px 18px; border-radius: 16px; }
+  .mcard h3 { font-size: 14px; margin-bottom: 8px; }
+  .mcard p { font-size: 12px; line-height: 1.6; }
+  .truth { padding: 32px 20px; margin-top: 28px; }
+  .truth p { font-size: 16px; line-height: 2; }
+  .future ul { margin-top: 18px; gap: 10px; }
+  .future li { padding: 16px 20px; font-size: 14px; line-height: 1.6; }
+  .profile { gap: 20px; margin-top: 28px; }
+  .pf-name { font-size: 18px; }
+  .pf-role { font-size: 10px; }
+  .pf-body p { font-size: 13px; line-height: 1.6; }
+  .menu-card-body { padding: 20px 18px; }
+  .menu-card-body h3 { font-size: 17px; }
+  .menu-card-body p { font-size: 12.5px; }
+  .gallery-grid { gap: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="bg-photo"></div>
+<div class="stars" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="petal p1"></div>
+  <div class="petal p2"></div>
+  <div class="petal p3"></div>
+  <div class="wrap">
+    <p class="hero-tag">伴走型ボディ＆マインドサロン Pono</p>
+    <h1>最後のダイエットを、<br><span class="accent">自分を好きになる時間に。</span></h1>
+    <p>代謝の低下、年々増える体重、着られなくなった服——。頑張っているのに変われないのは、あなたの意志が弱いからではありません。Ponoは、身体と心を一緒に整えて「最後のダイエット」を叶える、寄り添い型サロンです。</p>
+    <a class="btn" href="#booking">初回カウンセリングを予約する<small>＼ まずは話を聞いてみるだけでもOK ／</small></a>
+  </div>
+</header>
+
+<section class="philosophy-section">
+  <div class="wrap reveal">
+    <p class="phil-eyebrow">PHILOSOPHY</p>
+    <h2 class="phil-h2">「痩せたら、好きになれる」<br><span class="phil-gradient">その順番、逆かもしれません。</span></h2>
+    <p class="phil-text">あなたは「痩せたら自分を好きになれる」と思っていませんか？<br>Ponoは、その考え方をそっと変えるお手伝いをします。<br>自分を好きになるプロセスの中で、自然と身体も心も整っていく——<br>それが、本当の変化です。</p>
+  </div>
+</section>
+
+<section class="pain bg-light-gold">
+  <div class="wrap reveal">
+    <span class="eyebrow">CHECK</span>
+    <h2>こんなお悩み、<em>ひとつでも</em>当てはまりませんか？</h2>
+    <ul class="checks">
+      <li>代謝が下がって、昔のように痩せなくなった</li>
+      <li>身体がいつも疲れていて、むくみが気になる</li>
+      <li>好きだった洋服が着られず、体型に合わせて服を選んでいる</li>
+      <li>年々体重が増え、健診の数字が気になっている</li>
+      <li>鏡を見るたび、同年代より老けて見える気がして落ち込む</li>
+    </ul>
+    <p class="closing">そのお悩み、<strong>我慢や根性では解決しません。</strong></p>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="wrap reveal">
+    <span class="eyebrow">よくある落とし穴</span>
+    <h2>頑張り屋さんほどハマる、<em>3つの間違い</em></h2>
+    <div class="mistake-cards">
+      <div class="mcard"><h3>① 食べなければ痩せる？</h3><p>極端な食事制限は代謝をさらに下げ、リバウンドしやすい身体をつくります。</p></div>
+      <div class="mcard"><h3>② 体重の数字だけを追う</h3><p>「⦿ヶ月で⦿kg減」だけを追うダイエットは、睡眠・体調・心の変化を置き去りにします。</p></div>
+      <div class="mcard"><h3>③ ネット情報の自己流ケア</h3><p>テレビやSNSの健康法、なんとなく飲んでいるサプリ。それ、本当にあなたの身体に合っていますか？</p></div>
+    </div>
+    <div class="truth">
+      <p>本当に変えるべきなのは、体重ではなく<br><em>「自分との向き合い方」</em>です。</p>
+    </div>
+  </div>
+</section>
+
+<section class="concept bg-light-rose">
+  <div class="wrap reveal">
+    <span class="eyebrow">CONCEPT</span>
+    <h2>Ponoは、体重を落とす場所ではなく<br><em>自分を大切にできるようになる場所。</em></h2>
+    <p class="lead">「Pono」はハワイ語で"本来あるべき、調和のとれた状態"。「痩せなきゃ価値がない」という呪縛を手放し、自分を認めながら自然と行動できる——そんな状態を、一緒に創っていきます。</p>
+    <div class="mirror">
+      <p>施術のあと、家に帰って。<br>ふと鏡を見るのが、<br>楽しみになる毎日へ。</p>
+      <p class="sig">— PONO —</p>
+    </div>
+  </div>
+</section>
+
+<section class="steps bg-light-gold">
+  <div class="wrap reveal">
+    <span class="eyebrow">METHOD</span>
+    <h2>Ponoの<em>3つのステップ</em></h2>
+    <div class="step">
+      <div class="stepnum">壱</div>
+      <div><h3>身体を整える</h3><p>代謝・血流・ホルモンバランスにアプローチする施術と、無理のない食事改善で「痩せやすい身体の土台」をつくります。</p></div>
+    </div>
+    <div class="step">
+      <div class="stepnum">弐</div>
+      <div><h3>心を整える</h3><p>自己否定のクセを少しずつ手放し、カウンセリングを通して「自分の本音」に気づく時間をつくります。</p></div>
+    </div>
+    <div class="step">
+      <div class="stepnum">参</div>
+      <div><h3>小さな成功体験を積む<span class="star">いちばん大切</span></h3><p>体重以外の変化——睡眠、体調、表情、服の似合い方——を一緒に見つけて、変化を実感しながら伴走します。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light-rose">
+  <div class="wrap reveal">
+        <span class="eyebrow">TREATMENT</span>
+        <h2>Ponoの<em>施術</em></h2>
+        <p class="lead">結果が出る理由は、ここにあります。</p>
+
+      <div class="menu-card-horizontal">
+        <img src="winback.jpg" alt="WINBACK" class="menu-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="menu-img-placeholder" style="display:none">🌿</div>
+
+        <div class="menu-body">
+          <span class="menu-tag">BODY TREATMENT</span>
+          <h3>WINBACK</h3>
+          <p>WINBACKを受けると、こんな状態になれます。</p>
+          <p>冷えにくく、むくみにくく、代謝が上がって痩せやすい<br>「本来あるべき身体の状態」に戻れます。</p>
+          <p>頑張らなくても、変わりやすい身体になれる。<br>それが、WINBACKです。</p>
+        </div>
+      </div>
+
+  </div>
+</section>
+
+<section class="bg-dark">
+  <div class="wrap reveal">
+    <span class="eyebrow">WHY PONO</span>
+    <h2>「痩せさせる」サロンでは、<em style="background:linear-gradient(110deg,#fbc1c1,#E8D090);-webkit-background-clip:text;background-clip:text;color:transparent">ありません。</em></h2>
+    <p class="lead">多くのお客様が、体型だけでなく表情や考え方まで変わっていきます。体重だけでなく、睡眠・体調・メンタル面までトータルで改善できるのは、一人ひとりに寄り添うカウンセリングと、ゴールまで一緒に走る伴走サポートがあるから。技術だけでなく、お客様との信頼関係を何より大切にしています。</p>
+    <ul class="checks" style="margin-top:30px">
+      <li>マニュアルではなく、あなた専用のプランを設計</li>
+      <li>施術＋食事＋心のサポートをひとつの流れで</li>
+      <li>「自分を好きになれる状態」を一緒に創る、人生に寄り添う伴走型</li>
+    </ul>
+  </div>
+</section>
+
+<section class="bg-light-gold">
+  <div class="wrap reveal">
+    <span class="eyebrow">CUSTOMER VOICES</span>
+    <h2>お客様からの<em>リアルな声</em></h2>
+    <p class="lead">ご来店いただいたすべてのお客様から<span style="color: rgba(252, 149, 39, 0.916); text-shadow: 0 0 10px rgba(254, 254, 254, 0.8), 0 0 20px rgba(255, 250, 95, 0.4);"><b>5</b>★</span>をいただきました。</p>
+    <p class="lead" style="margin-top:8px;">いつも満足してくださるお客様の声を、ぜひご覧ください。</p>
+    <p class="lead" style="margin-top:8px; color:var(--rose); font-style:italic;">新しい自分へ、もう一歩だけ。</p>
+<div class="voice-carousel">
+  <div class="carousel-container">
+    <div class="carousel-wrapper" id="carouselWrapper">
+
+          <!-- SLIDE 1 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="1.png" alt="にこちゃん様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">にこちゃん様（女性/30代前半/主婦）</p>
+                <p class="voice-text">
+                  こちらに通い始めてから、体重だけでなく「見た目」が明らかに変わってきて周りからも「痩せた？」と言われるようになりました。
+                  特にびっくりしたのが、<mark class="highlight-rose">体の巡りが良くなった感じと、代謝の上がり方です。</mark>
+                  無理なことをさせられることもなく、ちゃんと理由を説明しながら進めてくれるので信頼できます。
+                  もっと早く来ればよかったと思っています。
+                  <mark class="highlight-rose">何よりスタッフ様が本当に親身で、その日の体の状態に合わせて施術してくださるので安心してお任せできます。</mark>
+                  色々身体のことで悩んでいる方におすすめしたいサロンです。
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="2.png" alt="りー様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">りー様（女性/40代/会社員）</p>
+                <p class="voice-text">
+                  オープン当初から通っています。とても雰囲気が良くて、毎回癒されています。
+                  最近は特に、<mark class="highlight-rose">肌が綺麗ですね。どこの化粧品使ってるんですか？と聞かれる事が多くなりました。</mark>
+                  化粧品も変わってないですし、他の美容はしていないので、<mark class="highlight-winback">WINBACKで顔までして頂いてるので、そのおかげかなと思っています。</mark>
+                  自信が持てるようになりました。いつもありがとうございます！
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 3 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="3.png" alt="モミ様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">モミ様（女性/40代）</p>
+                <p class="voice-text">
+                  長年悩んでいる肩こりや頭痛、目のかすみ、慢性的な身体のだるさがありましたが、
+                  <mark class="highlight-winback">WINBACKとカッピング、そして全身マッサージフルコースで丁寧に施術後は全身のむくみもスッキリ！</mark>
+                  <mark class="highlight-rose">目が開いて特に視界がクリアになったような感覚があり、毎回驚かされます。</mark>
+                  施術中も心地よくリラックスでき、終わった後は身体だけでなく気持ちまで軽くなります。
+                  ponoさんのお人柄、施術技術で心も身体もリフレッシュさせてもらえます。いつもありがとうございます！
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 4 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="4.png" alt="ＹＹ様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">ＹＹ様（女性/40代/会社員）</p>
+                <p class="voice-text">
+                  更年期に差しかかり、痩せにくさや疲れやすさを感じていたため<mark class="highlight-winback">WINBACKを始めました。</mark>
+                  身体の深部から温まる感覚があり、<mark class="highlight-rose">施術後は血流が良くなったのか身体がスッキリ。続けるうちに朝の目覚めも良くなり、気になっていたお腹周りも以前よりスッキリしてきました。</mark>
+                  ただ痩せるだけでなく、身体の調子まで整う感じがして毎回楽しみに通っています。
+                  40代以降のダイエットに悩んでいる方におすすめしたいです。いつもありがとうございます！
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 5 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="5.png" alt="アイちゃん様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">アイちゃん様（女性/40代/パート・アルバイト）</p>
+                <p class="voice-text">
+                  ponoさんは、いつもその日の体調や希望に沿ってメニューをこなしてくれます。
+                  <mark class="highlight-rose">肌の調子もよく、レモンボトルを8回こなしましたがフェイスラインのもたつきも、まだキープできています。</mark>
+                  新しいメニューも、自分に合ったものを選んでいただけるので、楽しく通えています。
+                  また、次回も宜しくお願いいたしまーす♪
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 6 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="6.png" alt="モミ様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">モミ様（女性/40代）</p>
+                <p class="voice-text">
+                  施術後は身体がとても軽くなり、肩こりや全身のコリもかなり楽に。
+                  また施術だけでなく、<mark class="highlight-rose">食事やサプリメントについてのアドバイスもいただけるので、内側からのケアも意識できるようになりました。</mark>
+                  そのおかげで、<mark class="highlight-rose">便通も良くなり、生理痛も以前は酷かったですが、軽減してきています。</mark>
+                  見た目もスッキリしてきており毎回とても満足しています。
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 7 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="7.png" alt="あまじゅん様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">あまじゅん様（女性/60代）</p>
+                <p class="voice-text">
+                  お腹や背中のたるみが気になり、写真に写る自分を見るのが嫌でした。年齢だから仕方ない、とどこかで諦めていたのだと思います。
+                  でも、<mark class="highlight-winback">WINBACKの施術は痛みもなく、ただ心地よく温かいだけなのに、終わった後、身体のラインがすっと引き上がった感覚がありました。</mark>
+                  <mark class="highlight-rose">姿勢が自然と伸び、呼吸が深くなる。鏡を見るのが、少し楽しみになったのです。</mark>
+                  無理をしないのに整っていく。それは、大人世代にこそ必要なケアだと感じています。
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 8 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="8.png" alt="モミ様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">モミ様（女性/40代）</p>
+                <p class="voice-text">
+                  年末年始の休み明けからなかなか体が戻らず、だるさやひどい肩・首こり、下半身のむくみ、食いしばりによる頭痛まで出てしまい、今回もフルコースでお願いしました。
+                  <mark class="highlight-winback">今回は腰とお腹を中心にWINBACKをあてていただき、肩や首、フェイス、腕、脚まで全身をとても丁寧に施術してもらいました。</mark>
+                  <mark class="highlight-rose">施術後は体が驚くほど軽くなり、肩こりや全身のこわばりもかなり楽になりました。</mark>
+                  今年も自分の体を整えるために、ぜひお願いしたいと思います。
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 9 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="9.png" alt="りー様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">りー様（女性/40代/会社員）</p>
+                <p class="voice-text">
+                  今回は<mark class="highlight-winback">全身WINBACKとフェイスのラフォンテをして頂きました。</mark>
+                  ほうれい線が気になっていたので、美容皮膚科に行こうかと考えてましたが、<mark class="highlight-rose">施術後ほうれい線は気にならなくなっていました。</mark>
+                  WINBACKは全身してもらったので、体も温まり、夜はぐっすり眠れました。
+                  聞き上手なので、つい話してしまいますが、後半は気持ちよく、癒されて寝てしまいます。毎回行くのが楽しみです。
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 10 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="10.png" alt="にこちゃん様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">にこちゃん様（女性/30代前半/主婦）</p>
+                <p class="voice-text">
+                  90分で全身+顔～頭まで念入りに施術してもらいました！
+                  <mark class="highlight-winback">WINBACKでお腹を温めながら顔も同時進行で施術して頂けるのが最高に気持ちがいいです！</mark>
+                  <mark class="highlight-rose">最近寒くて凝り固まっていた背中や肩もかなり緩くなり全身ぽかぽかで心まで緩みました。</mark>
+                  いつもPonoさんに伺うと優しい気持ちになれます。癒しの場です。
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 11 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="11.png" alt="あまじゅん様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">あまじゅん様（女性/60代）</p>
+                <p class="voice-text">
+                  今回は<mark class="highlight-winback">WINBACKとラフォンテをしてもらいました！</mark>
+                  ラフォンテは初めてでしたが、施術後はツルツル！ハリ感も実感しました！
+                  年齢的に目の下や頬のたるみが気になり美容整形も、、、と考えていましたが、
+                  <mark class="highlight-rose">WINBACKとラフォンテのコンビ施術で今までの悩みが解消され大満足でした！</mark>
+                  いつも丁寧に施術してくださりありがとうございます！
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 12 -->
+          <div class="carousel-slide">
+            <div class="voice-card-inner">
+              <div class="voice-avatar">
+                <img src="12.png" alt="ほし様" onerror="this.parentElement.innerHTML='👩'">
+              </div>
+              <div class="voice-quote">
+                <p class="voice-customer">ほし様（女性/30代前半）</p>
+                <p class="voice-text">
+                  いつも<mark class="highlight-winback">WINBACKでお世話になってますが</mark>今回初めてのフェイシャル機器が導入されたとのことで施術してもらいました！
+                  30歳過ぎてからちょうど毛穴の詰まりやたるみが気になっていたので<mark class="highlight-rose">お肌が綺麗になって嬉しかったです！</mark>
+                  ピーリングとエラスチンやコラーゲン再生ができる機械みたいなので今後も定期的にお願いしようと思います！
+                  <mark class="highlight-rose">次の日の化粧ノリがすごく良かったので母にも紹介しました！！！</mark>またお願いします！
+                </p>
+                <p class="voice-meta"><span class="voice-stars">★★★★★</span> 大満足</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" onclick="prevSlide()">❮</button>
+        <div class="carousel-dots" id="dotsContainer"></div>
+        <button class="carousel-btn" onclick="nextSlide()">❯</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="wrap reveal">
+    <span class="eyebrow">THE TRANSFORMATION </span>
+      <h2>「本当に変われるの？」<br><em>その答えが、ここにあります。</em></h2>
+      <p class="lead">Ponoに通ったお客様の、リアルな変化の記録。</p>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-imgs"><figure><img src="before-after-1.png" alt="Before-After-1"></figure></div>
+        <div class="ba-body">
+          <div class="ba-timeline">4月15日 → 5月31日 (6週間)</div>
+          <h3>体重 -0.9kg / 体脂肪率低下</h3>
+          <div class="ba-transformation"><strong>お悩み:</strong> むくみ・疲労感 <strong>→ 変化:</strong> 軽快感・便通改善</div>
+          <p>「毎日出てなかった便が毎朝出るようになった。自分の欲に気付けたことが一番の収穫です。」</p>
+          <div class="ba-note">✨ 短期間での確実な変化 ✨</div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-imgs"><figure><img src="before-after-2.png" alt="Before-After"></figure></div>
+        <div class="ba-body">
+          <div class="ba-timeline">4月15日 → 5月31日 (6週間)</div>
+          <h3>浮腫み改善 / 身体が軽い</h3>
+          <div class="ba-transformation"><strong>お悩み:</strong> 浮腫み・疲労 <strong>→ 変化:</strong> スッキリ・顔色改善</div>
+          <p>「ズボンのボタンが締められるようになった！顔色も明るくなったと周りから言われます。」</p>
+          <div class="ba-note">✨ 見た目の変化が明らか ✨</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light-gold">
+  <div class="wrap reveal">
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-imgs"><figure><img src="winback-4.png" alt="WINBACK Before-After 1"></figure></div>
+        <div class="ba-body">
+          <div class="ba-timeline">6週間コース</div>
+          <h3>お腹周り・太ももがスッキリ</h3>
+          <div class="ba-transformation"><strong>お悩み:</strong> 下半身の張り・むくみ <strong>→ 変化:</strong> ラインの引き締まり</div>
+          <p>「浮腫が減った。身体全体で感じる変化。特に太ももがスッキリしました。」</p>
+          <div class="ba-note">✨ 複数箇所での効果実感 ✨</div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-imgs"><figure><img src="winback-3.png" alt="WINBACK Before-After 2"></figure></div>
+        <div class="ba-body">
+          <div class="ba-timeline">6週間コース</div>
+          <h3>腸内環境が整い、毎日スッキリ</h3>
+          <div class="ba-transformation"><strong>お悩み:</strong> 便秘・体の重さ <strong>→ 変化:</strong> 毎日快適・お腹すっきり</div>
+          <p>「食後の眠さがなくなった。腸の調子が整って、毎朝気持ちよく目覚められるようになりました！」</p>
+          <div class="ba-note">✨ 内側から変わる実感 ✨</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light-rose">
+  <div class="wrap reveal">
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-imgs"><figure><img src="before-after-5.png" alt="Before-After"></figure></div>
+        <div class="ba-body">
+          <div class="ba-timeline">集中コース (12週間)</div>
+          <h3>お腹すっきり / 理想のラインへ</h3>
+          <div class="ba-transformation"><strong>お悩み:</strong> お腹の張り・たるみ <strong>→ 変化:</strong> 引き締まり・ハリ</div>
+          <p>「すっきり引き締まった。メリハリのある美しいボディラインを手に入れました。自信が持てるようになりました。」</p>
+          <div class="ba-note">✨ 集中コース完了 ✨</div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-imgs"><figure><img src="before-after-6.png" alt="Before-After"></figure></div>
+        <div class="ba-body">
+          <div class="ba-timeline">集中コース (12週間)</div>
+          <h3>太腿スッキリ / 後ろ姿も美しく</h3>
+          <div class="ba-transformation"><strong>お悩み:</strong> 太腿の張り・背中のたるみ <strong>→ 変化:</strong> 全体的な引き締まり</div>
+          <p>「背中や腰回りもすっきり整えた。どこから見ても美しいシルエットになれました。」</p>
+          <div class="ba-note">✨ 段階的な変化 ✨</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="wrap reveal">
+    <div class="ba-grid">
+      <div class="ba-card">
+        <div class="ba-imgs"><figure><img src="before-after-3.png" alt="Before-After"></figure></div>
+        <div class="ba-body">
+          <div class="ba-timeline">4ヶ月間の継続コース</div>
+          <h3>お腹まわり・太ももがスッキリ</h3>
+          <div class="ba-transformation"><strong>お悩み:</strong> 産後のお腹・太もも <strong>→ 変化:</strong> ハリ・引き締まり</div>
+          <p>気になる部分にアプローチし、メリハリのある美しいボディラインへ。「自分の身体が好きになれました。」</p>
+          <div class="ba-note">✨ 本当の変化を実感 ✨</div>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-imgs"><figure><img src="before-after-4.png" alt="Before-After"></figure></div>
+        <div class="ba-body">
+          <div class="ba-timeline">4ヶ月間の継続コース</div>
+          <h3>全体的にスッキリ / 自信が持てるボディへ</h3>
+          <div class="ba-transformation"><strong>お悩み:</strong> 全体的なたるみ <strong>→ 変化:</strong> 全体的に引き締まり</div>
+          <p>背中や腰回りもすっきり整え、どこから見ても美しいシルエットへ。「生活の質が本当に向上しました。」</p>
+          <div class="ba-note">✨ 生活の質が向上 ✨</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="future bg-light-rose">
+  <div class="wrap reveal">
+    <span class="eyebrow">FUTURE</span>
+    <h2>Ponoで手に入れる、<em>その先の毎日</em></h2>
+    <ul>
+      <li>好きな服を、サイズではなく「好き」で選べるようになる</li>
+      <li>鏡を見るのが、憂うつな時間から楽しみな時間に変わる</li>
+      <li>痩せることがゴールではなく、自分らしく輝く人生がはじまる</li>
+    </ul>
+  </div>
+</section>
+
+<section class="bg-light-gold">
+  <div class="wrap reveal">
+    <span class="eyebrow">FOR YOU?</span>
+    <h2>Ponoが<em>力になれる方</em>・なれない方</h2>
+    <div class="fitgrid">
+      <div class="fit yes">
+        <h3>こんな方に来てほしい</h3>
+        <ul>
+          <li>本気で自分を変えたい方</li>
+          <li>「最後のダイエット」にしたい方</li>
+          <li>年齢を重ねても綺麗でいたい方</li>
+          <li>身体だけでなく心も整えたい方</li>
+          <li>アドバイスを素直に実践できる方</li>
+          <li>自分を好きになりたい方</li>
+        </ul>
+      </div>
+      <div class="fit no">
+        <h3>ご遠慮いただきたい方</h3>
+        <ul>
+          <li>楽して痩せたいだけの方</li>
+          <li>一度の来店で人生を変えてほしい方</li>
+          <li>アドバイスを実践する気がない方</li>
+          <li>自分自身と向き合う気持ちがない方</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="wrap reveal">
+    <div class="faq-section">
+      <span class="eyebrow">FAQ</span>
+      <h2>よくある<em>質問と回答</em></h2>
+      <div class="faq-items">
+        <div class="faq-item">
+          <div class="faq-question"><span>施術は痛いですか？</span><span class="faq-toggle">▼</span></div>
+          <div class="faq-answer">Ponoの施術は痛みを伴いません。むしろ、リラックスしながら受けていただけます。代謝・血流・ホルモンバランスにアプローチする優しい施術なので、初めての方でも安心です。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>結果はどのくらいで出ますか？</span><span class="faq-toggle">▼</span></div>
+          <div class="faq-answer">個人差がありますが、多くのお客様は2〜4週間で体感的な変化（疲労感の改善、睡眠の質向上など）を感じられます。体型の目に見える変化は4〜8週間が目安です。重要なのは「体重の数字」ではなく「身体と心全体の変化」です。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>食事制限は厳しいですか？</span><span class="faq-toggle">▼</span></div>
+          <div class="faq-answer">いいえ、Ponoの食事改善は「制限」ではなく「選択」です。無理のない範囲でお客様のライフスタイルに合わせたプランを一緒に作ります。極端な食事制限は代謝を下げてしまうため、むしろおすすめしていません。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>どのくらいの頻度で通えばいいですか？</span><span class="faq-toggle">▼</span></div>
+          <div class="faq-answer">目的や予算によって異なります。集中的に変化を求める場合は週2回、メンテナンスの場合は月1〜2回がおすすめです。初回カウンセリングで、あなたにぴったりなプランをご提案させていただきます。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>40代以上でも効果はありますか？</span><span class="faq-toggle">▼</span></div>
+          <div class="faq-answer">もちろんです。むしろ、40代以上のお客様こそ、Ponoの「身体と心を整える」アプローチが活躍します。実際に40代〜50代のお客様が最も満足度が高いです。年齢は関係ありません。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>サプリメントや化粧品の販売はありますか？</span><span class="faq-toggle">▼</span></div>
+          <div class="faq-answer">Ponoでは不要な販売は行いません。ただし、お客様の身体に本当に必要な栄養補助や基礎化粧品については、カウンセリングを通してご提案することがあります。その際は「必要性」を最優先に考えます。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light-rose">
+  <div class="wrap reveal">
+    <span class="eyebrow">PROFILE</span>
+    <h2>あなたに伴走する、<em>セラピスト</em></h2>
+    <div class="profile">
+      <div class="pf-photo"><img src="pono-profile-1.png" alt="オーナーセラピスト"></div>
+      <div class="pf-body">
+        <p class="pf-name">武岡 志歩</p>
+        <p class="pf-role">PONO オーナーセラピスト</p>
+        <p>セラピスト歴10年以上。多くのお客様と向き合う中で気づいたこと——それは「体型だけを変えても、心が整わなければ本当の変化ではない」ということです。</p>
+        <p>私自身、「痩せなきゃ」と自分を責め続けた経験があるからこそ、数字だけを追うダイエットの苦しさを知っています。Ponoでは技術の提供だけでなく、お一人おひとりの身体と心に寄り添い、ゴールまで一緒に走る「伴走者」でありたいと思っています。</p>
+        <p>あなたの「最後のダイエット」を、二人三脚で叶えましょう。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light-gold">
+  <div class="wrap reveal">
+    <span class="eyebrow">SALON</span>
+    <h2>サロンの<em>雰囲気</em></h2>
+    <p class="lead">あなたがリラックスして過ごせる、温かで美しい空間をご用意しています。</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="salon-1.jpg" alt="サロン内観" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span>🌸</span>salon-1.jpg</div>
+      </div>
+      <div class="gallery-item">
+        <img src="salon-2.png" alt="施術ルーム" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span>✨</span>salon-2.jpg</div>
+      </div>
+      <div class="gallery-item">
+        <img src="salon-3.jpg" alt="リラクゼーション空間" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span>🕯️</span>salon-3.jpg</div>
+      </div>
+      <div class="gallery-item">
+        <img src="salon-4.jpg" alt="カウンセリングスペース" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span>💐</span>salon-4.jpg</div>
+      </div>
+      <div class="gallery-item">
+        <img src="salon-5.jpg" alt="施術の様子" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span>🌿</span>salon-5.jpg</div>
+      </div>
+      <div class="gallery-item">
+        <img src="salon-6.jpg" alt="ウェルカムドリンク" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="gallery-item-placeholder" style="display:none"><span>☕</span>salon-6.jpg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="message bg-dark">
+  <div class="wrap reveal">
+    <span class="eyebrow">MESSAGE</span>
+    <h2>あなたへ、伝えたいこと</h2>
+    <p>自分を責めながら頑張り続けること。身体の声を無視して、我慢し続けること。——もう、終わりにしませんか。</p>
+    <p>『痩せる』はゴールではなく、自分自身を見つめ直して好きになるための"きっかけ"です。Ponoという名前には「あなたが本来の、調和のとれた状態に還る場所でありたい」という想いを込めました。</p>
+    <p>お客様が自分らしく輝ける未来を、全力でサポートします。</p>
+    <p class="name">Pono 代表 武岡 志歩</p>
+  </div>
+</section>
+
+<section class="final bg-light" id="booking">
+  <div class="wrap reveal">
+    <span class="eyebrow">RESERVATION</span>
+    <h2>最後のダイエットを、<br><em>自分を好きになる時間</em>に。</h2>
+    <p>まずは初回カウンセリングで、いまの身体と心の状態をお聞かせください。<br>無理な勧誘は一切ありません。</p>
+    <a class="btn" href="#" aria-label="予約フォームへ">今すぐ予約する<small>＼ 24時間ネット受付・残り枠わずか ／</small></a>
+    <p class="note">※ ご予約リンクは予約システム（LINE／HotPepper等）のURLに差し替えてください</p>
+  </div>
+</section>
+
+<footer>© Pono — 自分を大切にできるようになる場所</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn" href="#booking">初回カウンセリングを予約する</a>
+</div>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+(function() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const c = document.querySelector('.stars');
+  const N = innerWidth < 720 ? 26 : 46;
+  for (let i = 0; i < N; i++) {
+    const s = document.createElement('span');
+    s.className = 'star';
+    const size = (Math.random() * 3 + 1.5).toFixed(1);
+    s.style.width = s.style.height = size + 'px';
+    s.style.left = (Math.random() * 100) + '%';
+    s.style.top = (Math.random() * 100) + '%';
+    s.style.setProperty('--d', (Math.random() * 4 + 3).toFixed(1) + 's');
+    s.style.setProperty('--dl', (Math.random() * 6).toFixed(1) + 's');
+    s.style.setProperty('--f', (Math.random() * 20 + 18).toFixed(0) + 's');
+    s.style.setProperty('--o', (Math.random() * 0.5 + 0.45).toFixed(2));
+    c.appendChild(s);
+  }
+})();
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const totalSlides = slides.length;
+
+function createDots() {
+  const dotsContainer = document.getElementById('dotsContainer');
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('div');
+    dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+  }
+}
+
+function updateSlide() {
+  document.getElementById('carouselWrapper').style.transform = `translateX(-${currentSlide * 100}%)`;
+  document.querySelectorAll('.carousel-dot').forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentSlide);
+  });
+}
+
+function nextSlide() { currentSlide = (currentSlide + 1) % totalSlides; updateSlide(); }
+function prevSlide() { currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; updateSlide(); }
+function goToSlide(idx) { currentSlide = idx; updateSlide(); }
+createDots();
+
+window.addEventListener('scroll', () => {
+  const stickyCta = document.getElementById('stickyCta');
+  const footerRect = document.querySelector('footer').getBoundingClientRect();
+  stickyCta.classList.toggle('hidden', footerRect.top < window.innerHeight);
+});
+
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-question').addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
+});
+</script>
+</body>
+</html>
